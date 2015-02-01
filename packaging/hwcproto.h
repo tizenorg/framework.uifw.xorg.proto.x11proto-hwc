@@ -25,6 +25,14 @@
 
 #include <X11/extensions/hwctokens.h>
 
+typedef struct {
+    CARD32 drawable B32;
+    INT16 srcX B16, srcY B16;
+    CARD16  srcWidth B16, srcHeight B16;
+    INT16 dstX B16, dstY B16;
+    CARD16  dstWidth B16, dstHeight B16;
+} xHWCDrawInfo;
+
 /* Errors */
 
 typedef struct {

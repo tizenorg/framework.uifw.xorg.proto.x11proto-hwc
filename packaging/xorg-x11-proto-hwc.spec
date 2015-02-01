@@ -1,6 +1,6 @@
 Name:     xorg-x11-proto-hwc
 Summary:  X.Org X11 Protocol hwcproto
-Version:  0.1.0
+Version:  0.1.1
 Release:  1
 VCS:      framework/uifw/xorg/proto/x11proto-hwc#38ccb3606c2fbe64572793fd1be0aa7ab38f75aa
 Group:    Development/System
