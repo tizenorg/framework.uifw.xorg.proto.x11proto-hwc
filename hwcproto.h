@@ -31,8 +31,9 @@ typedef struct {
     CARD16  srcWidth B16, srcHeight B16;
     INT16 dstX B16, dstY B16;
     CARD16  dstWidth B16, dstHeight B16;
+    HWCCompositeMethod compMethod B32;
 } xHWCDrawInfo;
-#define sz_xHWCDrawInfo   20
+#define sz_xHWCDrawInfo   24
 
 /* Errors */
 
@@ -64,7 +65,7 @@ typedef struct {
     CARD8   hwcReqType;
     CARD16  length B16;
     CARD32  window B32;
-    CARD32  pad B32;
+    CARD32  crtc B32;
 } xHWCOpenReq;
 #define sz_xHWCOpenReq	12
 
@@ -87,9 +88,10 @@ typedef struct {
     CARD8   hwcReqType;
     CARD16  length B16;
     CARD32  window B32;
+    CARD32  crtc B32;
     CARD32  count B32;
 } xHWCSetDrawablesReq;
-#define sz_xHWCSetDrawablesReq     12
+#define sz_xHWCSetDrawablesReq     16
 
 typedef struct {
     CARD8   reqType;
@@ -113,7 +115,7 @@ typedef struct {
     CARD16 evtype B16;
     CARD16 pad2;
     CARD32 maxLayer B32;
-    CARD32 pad3 B32;
+    CARD32 crtc B32;
     CARD32 pad4 B32;
     CARD32 pad5 B32;
     CARD32 pad6 B32;    

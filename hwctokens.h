@@ -24,8 +24,8 @@
 #define _HWC_TOKENS_H_
 
 #define HWC_NAME			"HWC"
-#define HWC_MAJOR			0
-#define HWC_MINOR			1
+#define HWC_MAJOR			2
+#define HWC_MINOR			0
 
 #define HWCNumberErrors		0
 #define HWCNumberEvents		0
@@ -33,8 +33,8 @@
 /* Requests */
 #define X_HWCQueryVersion		0
 #define X_HWCOpen				1
-#define X_HWCSetDrawables          2
-#define X_HWCSelectInput            3
+#define X_HWCSetDrawables       2
+#define X_HWCSelectInput        3
 
 #define HWCNumberRequests		4
 
@@ -45,6 +45,18 @@
 #define HWCConfigureNotifyMask      1
 
 #define HWCAllEvents   (HWCConfigureNotifyMask)
+
+/* new in 1.0 protocol */
+typedef unsigned int  HWCCompositeMethod;
+
+#define HWC_COMPOSITE_METHOD_DEFAULT       0   /*Default policy*/
+#define HWC_COMPOSITE_METHOD_SCALE_FULL    1   /*Preserve the window’s aspect ratio and center on the crtc*/
+#define HWC_COMPOSITE_METHOD_SCALE_TIGHT   2   /*Scale the window image to the destination region of hardware overlay.*/
+#define HWC_COMPOSITE_METHOD_DRIVER        3   /*Switch crtc resolution to the smallest mode that can fit the window.
+                                                 This mode is set only if the number of window is only one to set the drawable.*/
+#define HWC_COMPOSITE_METHOD_FILL          4   /*No upscaling, center on output and add black borders to compensate size mismatch*/
+
+
 
 /* Errors */
 
